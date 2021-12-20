@@ -1,0 +1,23 @@
+<h6 class="text-center display-6 text-decoration-underline mt-4 p-2">Max gdp per population ratio for each Country</h6>
+<table class="table table-striped table-hover mb-4 p-2">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Country Code 3</th>
+    <th>Year</th>
+    <th>Population</th>
+    <th>GDP</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let countryStats of countryStatsList" id="{{countryStats.countryId}}">
+    <td>{{ countryStats.countryId }}</td>
+    <td>{{ countryStats.name }}</td>
+    <td>{{ countryStats.countryCode3 }}</td>
+    <td>{{ countryStats.year | number }}</td>
+    <td>{{ countryStats.population | number }}</td>
+    <td>{{ countryStats.gdp | number }}</td>
+  </tr>
+  </tbody>
+</table>

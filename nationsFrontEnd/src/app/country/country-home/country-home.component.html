@@ -1,0 +1,43 @@
+<div class="row text-decoration-underline text-black-50 mt-4 p-1">
+  <div class="col-1">
+    #
+  </div>
+  <div class="col-1">
+    Name
+  </div>
+  <div class="col-2">
+    Country Code 2
+  </div>
+  <div class="col-1">
+    Area
+  </div>
+</div>
+<div class="row mb-4 p-2">
+  <ol class="list-group">
+    <li class="list-group-item" *ngFor="let country of countries" (click)="onRowClick(country.countryId)">
+      <span>{{ country.countryId }} | </span>
+      <span><b>Name: </b>{{ country.name }} | </span>
+      <span><b>Country Code 2: </b>{{ country.countryCode2 }} | </span>
+      <span><b>Area: </b>{{ country.area | number }} </span>
+    </li>
+  </ol>
+</div>
+
+<!--<table class="table table-striped">-->
+<!--  <thead>-->
+<!--  <tr>-->
+<!--    <th>#</th>-->
+<!--    <th>Name</th>-->
+<!--    <th>Country Code 2</th>-->
+<!--    <th>Area</th>-->
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--  <tr *ngFor="let country of countries" id="{{country.countryId}}" (click)="onRowClick(country.countryId)">-->
+<!--    <td>{{ country.countryId }}</td>-->
+<!--    <td>{{ country.name }}</td>-->
+<!--    <td>{{ country.countryCode2 }}</td>-->
+<!--    <td>{{ country.area | number }}</td>-->
+<!--  </tr>-->
+<!--  </tbody>-->
+<!--</table>-->

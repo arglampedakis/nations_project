@@ -1,0 +1,50 @@
+<div class="row m-4 p-2">
+  <h6 class="text-center display-6 text-decoration-underline">Analytics</h6>
+</div>
+<div class="row m-1 p-2">
+  <div class="col-4">
+    <select class="form-select" aria-label="Regions" [(ngModel)]="regionFilter" (change)="filter()">
+      <option selected value="null">All Regions</option>
+      <option *ngFor="let region of regions" [ngValue]="region">{{ region.name }}</option>
+    </select>
+  </div>
+  <div class="col-4">
+    <div class="input-group mb-3">
+      <span class="input-group-text">Year From</span>
+      <input type="number" class="form-control" aria-label="year from" min="0" [(ngModel)]="this.yearFrom" [value]="this.yearFrom" (change)="filter()" >
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="input-group mb-3">
+      <span class="input-group-text">Year To</span>
+      <input type="number" class="form-control" aria-label="year to" min="0" [(ngModel)]="this.yearTo" [value]="this.yearTo" (change)="filter()">
+    </div>
+  </div>
+</div>
+<div class="row mb-4 p-2">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Continent</th>
+      <th>Region</th>
+      <th>Country</th>
+      <th>Year</th>
+      <th>Population</th>
+      <th>GDP</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let analyticRecord of filteredAnalyticRecords; index as i">
+        <td>{{ i+1 }}</td>
+        <td>{{ analyticRecord.continentName }}</td>
+        <td>{{ analyticRecord.regionName }}</td>
+        <td>{{ analyticRecord.countryName }}</td>
+        <td>{{ analyticRecord.year }}</td>
+        <td>{{ analyticRecord.population }}</td>
+        <td>{{ analyticRecord.gdp }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
